@@ -6,7 +6,7 @@ security definer set search_path = public
 as $$
 begin
   insert into public.users (id ,name, email)
-  values (new.id ,new.name , new.email);
+  values (new.id ,new.raw_user_meta_data , new.email);
   return new;
 end;
 $$;
