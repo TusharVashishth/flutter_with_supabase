@@ -5,7 +5,7 @@ language plpgsql
 security definer set search_path = public
 as $$
 begin
-  insert into public.users (id ,name, email)
+  insert into public.users (id ,metadata, email)
   values (new.id ,new.raw_user_meta_data , new.email);
   return new;
 end;
